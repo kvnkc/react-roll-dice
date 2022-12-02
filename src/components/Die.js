@@ -1,7 +1,7 @@
-const Die = () => {
+const Die = ({ number }) => {
   return (
     <div>
-      <i class="fas fa-dice-one"></i>
+      <i className={`fas fa-dice-${number}`}></i>
     </div>
   );
 };
