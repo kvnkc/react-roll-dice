@@ -1,18 +1,25 @@
 import Die from "./Die";
 import { useState } from "react";
+import "./RollDice.css";
+
 const RollDice = () => {
-  const [roll, setRoll] = useState("one");
+  const [rollOne, setRollOne] = useState("one");
+  const [rollTwo, setRollTwo] = useState("two");
   const numbers = ["one", "two", "three", "four", "five", "six"];
-  const random = Math.floor(Math.random() * 6);
-  const randomNumber = numbers[random];
+  const randomOne = numbers[Math.floor(Math.random() * numbers.length)];
+  const randomTwo = numbers[Math.floor(Math.random() * numbers.length)];
 
   const handleClick = () => {
-    setRoll(randomNumber);
+    setRollOne(randomOne);
+    setRollTwo(randomTwo);
   };
 
   return (
-    <div>
-      <Die number={roll} />
+    <div className="RollDice">
+      <div className="RollDice-container">
+        <Die number={rollOne} />
+        <Die number={rollTwo} />
+      </div>
       <button onClick={handleClick}>Roll Dice</button>
     </div>
   );

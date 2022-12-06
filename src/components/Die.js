@@ -1,9 +1,5 @@
 const Die = ({ number }) => {
-  return (
-    <div>
-      <i className={`fas fa-dice-${number}`}></i>
-    </div>
-  );
+  return <i className={`fas fa-dice-${number}`}></i>;
 };
 
 export default Die;
